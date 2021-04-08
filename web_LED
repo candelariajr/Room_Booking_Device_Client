@@ -11,31 +11,29 @@ green = 26
 # blue = 13
 
 def _quantize(number):
-return (number * 100 / 255)
+        return (number * 100 / 255)
 
 
 def setColor(col):
-R_Val = (col & 0xFF0000) >> 16
-G_Val = (col & 0x00FF00) >> 8
-B_Val = (col & 0x0000FF)
-R_Val = _quantize(R_Val)
-G_Val = _quantize(G_Val)
-B_Val = _quantize(.75 * B_Val)
-RED.ChangeDutyCycle(R_Val)
-GREEN.ChangeDutyCycle(G_Val)
-# BLUE.ChangeDutyCycle(B_Val)
+        R_Val = (col & 0xFF0000) >> 16
+        G_Val = (col & 0x00FF00) >> 8
+        B_Val = (col & 0x0000FF)
+        R_Val = _quantize(R_Val)
+        G_Val = _quantize(G_Val)
+        B_Val = _quantize(.75 * B_Val)
+        RED.ChangeDutyCycle(R_Val)
+        GREEN.ChangeDutyCycle(G_Val)
+        # BLUE.ChangeDutyCycle(B_Val)
 
 
 def _deactivate():
-RED.ChangeDutyCycle(1)
-GREEN.ChangeDutyCycle(1)
-# BLUE.ChangeDutyCycle(1)
-
+        RED.ChangeDutyCycle(1)
+        GREEN.ChangeDutyCycle(1)
+        # BLUE.ChangeDutyCycle(1)
 
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-
 GPIO.setup(red,GPIO.OUT)
 GPIO.setup(green,GPIO.OUT)
 # GPIO.setup(blue,GPIO.OUT)
@@ -59,24 +57,24 @@ print "Red LED off"
 GPIO.output(19,GPIO.LOW)
 
 def recieveRequest():
-print ("""Request Recieved""")
+        print ("""Request Recieved""")
 
 
 class Handler(BaseHTTPRequestHandler):
-def do_GET(self):
-# url = parse_sq(self.path)
-# print "url: " + url
-if self.path == '/red':
-print "Green LED shutoff from web"
-GPIO.output(26,GPIO.LOW)
-print "Red LED on"
-GPIO.output(19,GPIO.HIGH)
-if self.path == '/green':
-print "Red LED shutoff from web"
-GPIO.output(19,GPIO.LOW)
-print "Green LED on"
-GPIO.output(26,GPIO.HIGH)
-self.send_response(200)
+        def do_GET(self):
+                # url = parse_sq(self.path)
+                # print "url: " + url
+                if self.path == '/red':
+                        print "Green LED shutoff from web"
+                        GPIO.output(26,GPIO.LOW)
+                        print "Red LED on"
+                        GPIO.output(19,GPIO.HIGH)
+                if self.path == '/green':
+                        print "Red LED shutoff from web"
+                        GPIO.output(19,GPIO.LOW)
+                        print "Green LED on"
+                        GPIO.output(26,GPIO.HIGH)
+                self.send_response(200)
 
 
 SocketServer.TCPServer.allow_reuse_address = True
