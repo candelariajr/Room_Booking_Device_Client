@@ -65,7 +65,7 @@ GPIO.output(19, GPIO.LOW)
 
 
 class Handler(BaseHTTPRequestHandler):
-    def do_get(self):
+    def do_GET(self):
         # url = parse_sq(self.path)
         # print "url: " + url
         if self.path == '/red':
