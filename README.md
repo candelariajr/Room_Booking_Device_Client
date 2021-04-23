@@ -17,5 +17,5 @@ Remove mouse cursor:
 sudo apt-get install unclutter
 
 add the following after install to ~/.config/lxsession/LXDE/autostart :
-@unclutter -idle 0.1
+@unclutter -idle 0.1\
 /usr/bin/chromium-browser --kiosk --disable-restore-session-state [REPLACE THIS WITH SERVER SCRIPT URL]
