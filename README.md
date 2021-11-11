@@ -8,8 +8,8 @@ Add to crontab:
 sudo vi crontab -e\
 @reboot python /path to script/wled.py
 
-If there is no lxsession directory:
-cp -r /etc/xdg/lxsession ~/.config/\
+If there is no lxsession directory:\
+cp -r /etc/xdg/lxsession ~/.config/
 
 Add to LXDE:\
 sudo vi ~/.config/lxsession/LXDE/autostart\
