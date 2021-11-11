@@ -4,9 +4,6 @@ This is what must physically be installed on the device and run with cron.
 Python 2 version: web_LED_py2\
 Python 3 version: web_LED_py3
 
-Add to crontab: 
-sudo vi crontab -e\
-@reboot python /path to script/wled.py
 
 If there is no lxsession directory:\
 cp -r /etc/xdg/lxsession ~/.config/
@@ -19,5 +16,6 @@ Remove mouse cursor:
 sudo apt-get install unclutter
 
 add the following after install to ~/.config/lxsession/LXDE/autostart:\
+python /path to script/wled.py\
 @unclutter -idle 0.1\
 /usr/bin/chromium-browser --kiosk --disable-restore-session-state [REPLACE THIS WITH SERVER SCRIPT URL]
