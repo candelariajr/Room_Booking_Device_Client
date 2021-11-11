@@ -8,7 +8,7 @@ If there is no lxsession directory:\
 cp -r /etc/xdg/lxsession ~/.config/
 
 Add to LXDE:\
-sudo vi ~/.config/lxsession/LXDE-pi/autostart\
+sudo vi ~/.config/lxsession/LXDE-pi/autostart
 
 python /path to script/wled.py\
 @unclutter -idle 0.1\
