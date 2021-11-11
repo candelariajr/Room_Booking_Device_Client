@@ -8,6 +8,9 @@ Add to crontab:
 sudo vi crontab -e\
 @reboot python /path to script/wled.py
 
+If there is no lxsession directory:
+cp -r /etc/xdg/lxsession ~/.config/\
+
 Add to LXDE:\
 sudo vi ~/.config/lxsession/LXDE/autostart\
 /usr/bin/chromium-browser --kiosk --disable-restore-session-state Location-of-Room_Booking_Web_Client
