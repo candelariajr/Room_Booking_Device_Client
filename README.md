@@ -4,18 +4,12 @@ This is what must physically be installed on the device and run with cron.
 Python 2 version: web_LED_py2\
 Python 3 version: web_LED_py3
 
-
 If there is no lxsession directory:\
 cp -r /etc/xdg/lxsession ~/.config/
 
 Add to LXDE:\
-sudo vi ~/.config/lxsession/LXDE/autostart\
-/usr/bin/chromium-browser --kiosk --disable-restore-session-state Location-of-Room_Booking_Web_Client
+sudo vi ~/.config/lxsession/LXDE-pi/autostart\
 
-Remove mouse cursor: 
-sudo apt-get install unclutter
-
-add the following after install to ~/.config/lxsession/LXDE/autostart:\
 python /path to script/wled.py\
 @unclutter -idle 0.1\
 /usr/bin/chromium-browser --kiosk --disable-restore-session-state [REPLACE THIS WITH SERVER SCRIPT URL]
