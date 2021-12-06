@@ -12,4 +12,4 @@ sudo vi ~/.config/lxsession/LXDE-pi/autostart
 
 python /path to script/wled.py\
 @unclutter -idle 0.1\
-/usr/bin/chromium-browser --kiosk --disable-pinch --disable-restore-session-state [REPLACE THIS WITH SERVER SCRIPT URL]
+/usr/bin/chromium-browser --kiosk --disable-pinch --disable-touch-drag-drop --disable-restore-session-state [REPLACE THIS WITH SERVER SCRIPT URL]
